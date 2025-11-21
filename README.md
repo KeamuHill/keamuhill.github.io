@@ -1,2 +1,2 @@
 # keamuhill.github.io
-Personal portfolio - game engine and graphics programming
+Portfolio website - Game engine development and graphics programming
