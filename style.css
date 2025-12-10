@@ -1,0 +1,374 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.7;
+    color: #d4d4d8;
+    overflow-x: hidden;
+    font-size: 1.05rem;
+}
+
+#boidsCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: linear-gradient(to bottom, #0f0f1e 0%, #1a1a2e 50%, #16213e 100%);
+}
+
+.sim-controls {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 100;
+}
+
+.control-btn {
+    background: rgba(15, 15, 30, 0.8);
+    border: 1px solid rgba(212, 212, 216, 0.2);
+    color: #d4d4d8;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s;
+    backdrop-filter: blur(8px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.control-btn:hover {
+    background: rgba(15, 15, 30, 0.95);
+    border-color: rgba(212, 212, 216, 0.4);
+    color: #fafafa;
+    transform: scale(1.05);
+}
+
+.control-btn:active {
+    transform: scale(0.95);
+}
+
+.content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+}
+
+header {
+    padding: 5rem 2rem 4rem;
+    background-image: url('media/tumult/Clouds.gif');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    border-bottom: 1px solid rgba(212, 212, 216, 0.1);
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(15, 15, 30, 0.7);
+    backdrop-filter: blur(2px);
+    z-index: 0;
+}
+
+header h1,
+header p,
+header nav {
+    position: relative;
+    z-index: 1;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    font-weight: 300;
+    margin-bottom: 0.5rem;
+    color: #fafafa;
+    letter-spacing: 1px;
+}
+
+header p {
+    font-size: 1.1rem;
+    color: #a1a1aa;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+}
+
+nav {
+    margin-top: 2.5rem;
+}
+
+nav a {
+    color: #d4d4d8;
+    text-decoration: none;
+    margin: 0 1.5rem;
+    font-size: 0.95rem;
+    transition: color 0.3s;
+    letter-spacing: 0.5px;
+}
+
+nav a:hover {
+    color: #fafafa;
+}
+
+section {
+    max-width: 1000px;
+    margin: 4rem auto;
+    padding: 3rem;
+    background: rgba(15, 15, 30, 0.5);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(212, 212, 216, 0.08);
+}
+
+h2 {
+    color: #fafafa;
+    margin-bottom: 2rem;
+    font-size: 1.5rem;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+}
+
+h3 {
+    color: #e4e4e7;
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+
+h4 {
+    color: #e4e4e7;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    font-weight: 400;
+}
+
+p {
+    color: #a1a1aa;
+    line-height: 1.8;
+}
+
+.project {
+    margin-bottom: 2.5rem;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.02);
+    border-left: 2px solid rgba(212, 212, 216, 0.2);
+}
+
+.project:last-child {
+    margin-bottom: 0;
+}
+
+.project p {
+    margin-bottom: 1rem;
+}
+
+.steam-gallery {
+    margin: 2rem 0;
+}
+
+.gallery-display {
+    position: relative;
+    width: 100%;
+    background: #000;
+    border: 1px solid rgba(212, 212, 216, 0.2);
+    aspect-ratio: 16 / 9;
+    margin-bottom: 0.75rem;
+}
+
+.gallery-item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: none;
+}
+
+.gallery-item.active {
+    display: block;
+}
+
+.gallery-thumbs {
+    display: flex;
+    gap: 0.5rem;
+    overflow-x: auto;
+    padding: 0.25rem 0;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(212, 212, 216, 0.3) transparent;
+}
+
+.gallery-thumbs::-webkit-scrollbar {
+    height: 6px;
+}
+
+.gallery-thumbs::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.gallery-thumbs::-webkit-scrollbar-thumb {
+    background: rgba(212, 212, 216, 0.3);
+    border-radius: 3px;
+}
+
+.thumb {
+    flex: 0 0 auto;
+    width: 150px;
+    aspect-ratio: 16 / 9;
+    background: #000;
+    border: 2px solid transparent;
+    cursor: pointer;
+    overflow: hidden;
+    transition: border-color 0.2s, opacity 0.2s;
+}
+
+.thumb img,
+.thumb video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.thumb:hover {
+    border-color: rgba(212, 212, 216, 0.4);
+}
+
+.thumb.active {
+    border-color: #fafafa;
+    opacity: 0.7;
+}
+
+.single-image {
+    margin: 1.5rem 0;
+}
+
+.single-image img {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: contain;
+    border: 1px solid rgba(212, 212, 216, 0.2);
+    background: #000;
+}
+
+.tech-list {
+    margin: 1rem auto;
+    color: #a1a1aa;
+    display: inline-block;
+    text-align: left;
+}
+
+.tech-list li {
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+}
+
+.demo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(800px, 1fr));
+    gap: 2rem;
+    margin: 1.5rem 0;
+}
+
+.demo-item {
+    background: rgba(255, 255, 255, 0.02);
+    padding: 1.5rem;
+    border: 1px solid rgba(212, 212, 216, 0.1);
+}
+
+.demo-item img,
+.demo-item video {
+    width: 100%;
+    height: auto;
+    margin-bottom: 1rem;
+    border: 1px solid rgba(212, 212, 216, 0.2);
+}
+
+.demo-item p {
+    font-size: 0.95rem;
+}
+
+.external-link {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.75rem 1.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(212, 212, 216, 0.3);
+    transition: all 0.3s;
+}
+
+.external-link:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(212, 212, 216, 0.5);
+    transform: translateX(4px);
+}
+
+footer {
+    text-align: center;
+    padding: 2rem;
+    background: rgba(15, 15, 30, 0.6);
+    margin-top: 4rem;
+    border-top: 1px solid rgba(212, 212, 216, 0.1);
+    color: #71717a;
+    font-size: 0.9rem;
+}
+
+a {
+    color: #d4d4d8;
+    text-decoration: none;
+    transition: color 0.3s;
+    border-bottom: 1px solid rgba(212, 212, 216, 0.3);
+}
+
+a:hover {
+    color: #fafafa;
+    border-bottom-color: rgba(250, 250, 250, 0.5);
+}
+
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    section {
+        margin: 2rem 1rem;
+        padding: 2rem 1.5rem;
+    }
+
+    nav a {
+        display: block;
+        margin: 1rem 0;
+    }
+
+    .thumb {
+        width: 100px;
+    }
+
+    .demo-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .sim-controls {
+        bottom: 1rem;
+        right: 1rem;
+    }
+
+    .control-btn {
+        width: 45px;
+        height: 45px;
+        font-size: 0.9rem;
+    }
+}

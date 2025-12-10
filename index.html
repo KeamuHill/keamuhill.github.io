@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Keamu Hill - Game Developer</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <canvas id="boidsCanvas"></canvas>
+
+    <div class="sim-controls">
+        <button id="pauseBtn" class="control-btn">❚❚</button>
+    </div>
+
+    <div class="content">
+        
+        <header>
+            <h1>Keamu Hill</h1>
+
+            <p>Game Developer | Graphics Programmer</p>
+            
+            <nav>
+                <a href="#about">About</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+            </nav>
+
+        </header>
+
+        <section id="about">
+            <h2>About</h2>
+
+            <p>I'm a game developer passionate about graphics programming, physics simulation, and custom engine architecture. I work with C++, GLSL, and modern rendering techniques.
+               This site is currently under constuction, there's more to come!
+            </p>
+        </section>
+
+        <section id="projects">
+            <h2>Projects</h2>
+            
+            <div class="project">
+                <h3>Custom 3D Game Engine & Tumult</h3>
+                
+                <p>A 3D engine built from scratch with C++, featuring Flecs ECS, Jolt Physics, and OpenGL. Currently developing Tumult, a local-multiplayer arena-combat game utilising the engine's advanced systems.</p>
+                
+                <div class="gallery">
+
+                    <div class="gallery-display">
+                        <img class="gallery-item" data-index="1" src="media/tumult/Scene.gif" alt="Tumult Scene">
+                        <img class="gallery-item active" data-index="0" src="media/tumult/Gameplay.gif" alt="Gameplay">
+                        <img class="gallery-item" data-index="2" src="media/tumult/BulletHell.gif" alt="Bullet Hell">
+                        <img class="gallery-item" data-index="3" src="media/tumult/Clouds.gif" alt="Cloud Rendering">
+                        <img class="gallery-item" data-index="4" src="media/tumult/Towers.gif" alt="Tower Defense">
+                        <img class="gallery-item" data-index="5" src="media/tumult/Capture.PNG" alt="Screenshot">
+                        <img class="gallery-item" data-index="6" src="media/tumult/Capture1.PNG" alt="Screenshot">
+                        <img class="gallery-item" data-index="7" src="media/tumult/Capture2.PNG" alt="Screenshot">
+                        <img class="gallery-item" data-index="8" src="media/tumult/Capture4.PNG" alt="Screenshot">
+                    </div>
+
+                    <div class="gallery-thumbs">
+                        <div class="thumb active" data-index="0">
+                            <img src="media/tumult/Gameplay.gif" alt="">
+                        </div>
+                        <div class="thumb" data-index="1">
+                            <img src="media/tumult/Scene.gif" alt="">
+                        </div>
+                        <div class="thumb" data-index="2">
+                            <img src="media/tumult/BulletHell.gif" alt="">
+                        </div>
+                        <div class="thumb" data-index="3">
+                            <img src="media/tumult/Clouds.gif" alt="">
+                        </div>
+                        <div class="thumb" data-index="4">
+                            <img src="media/tumult/Towers.gif" alt="">
+                        </div>
+                        <div class="thumb" data-index="5">
+                            <img src="media/tumult/Capture.PNG" alt="">
+                        </div>
+                        <div class="thumb" data-index="6">
+                            <img src="media/tumult/Capture1.PNG" alt="">
+                        </div>
+                        <div class="thumb" data-index="7">
+                            <img src="media/tumult/Capture2.PNG" alt="">
+                        </div>
+                        <div class="thumb" data-index="8">
+                            <img src="media/tumult/Capture4.PNG" alt="">
+                        </div>
+                    </div>
+                </div>
+
+                <ul class="tech-list">
+                    <li>Deferred shading pipeline with PBR materials</li>
+                    <li>Skeletal animation with Ozz Animation</li>
+                    <li>Jolt Physics integration with custom rope physics</li>
+                    <li>Pixel-perfect orthographic rendering</li>
+                </ul>
+            </div>
+
+
+            <div class="project">
+                <h3>Raymarched Voxel Engine</h3>
+                
+                <p>Real-time voxel rendering/simulation engine using adaptive raymarching techniques for efficient traversal and rendering</p>
+                
+                <div class="gallery">
+                    <div class="gallery-display">
+                        <video class="gallery-item active" data-index="0" controls>
+                            <source src="media/voxel-engine/HumbleEngineClip.mp4" type="video/mp4">
+                        </video>
+                    </div>
+
+                    <div class="gallery-thumbs">
+                        <div class="thumb active" data-index="0">
+                            <video muted><source src="media/voxel-engine/HumbleEngineClip.mp4" type="video/mp4"></video>
+                        </div>
+                    </div>
+                </div>
+
+                <ul class="tech-list">
+                    <li>GPU-accelerated raymarching</li>
+                    <li>Efficient brickmap based storage</li>
+                    <li>Dynamic lighting, reflections, ambient-occlusion, and shadows</li>
+                </ul>
+            </div>
+
+            <div class="project">
+                <h3>Technical Demos</h3>
+                
+                <div class="demo-grid">
+                    <div class="demo-item">
+                        <h4>2D Physics Engine</h4>
+
+                        <video controls loop muted>
+                            <source src="media/2d-physics/Asterboids-2025-1.mp4" type="video/mp4">
+                        </video>
+                        <p>Custom 2D rigid body physics with collision detection and resolution.</p>
+                    </div>
+
+                    <div class="demo-item">
+                        <h4>AI Systems</h4>
+                        <img src="media/ai-pathfinding/A-Star 2024-2.png" alt="AI Demo">
+                        <p>A* pathfinding and behaviour tree implementation for intelligent agent navigation.</p>
+                    </div>
+
+                    <!-- <div class="demo-item">
+                        <h4>Falling Sand Simulator</h4>
+                        <video controls loop muted>
+                            <source src="media/falling-sand/illumination.mp4" type="video/mp4">
+                        </video>
+                        <p>Particle simulation with 2D raymarched global illumination.</p>
+                    </div> -->
+
+                    <div class="demo-item">
+                        <h4>CPU Ray Tracer</h4>
+                        <img src="media/ray-tracer/Ray-Tracer 2024-4.png" alt="Ray Tracer Demo">
+                        <p>Multithreaded CPU ray tracer based on The Cherno's tutorial series, extended with transparency and refraction support.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project">
+                <img src="media/crunch-time/Title_CrunchTime.png" alt="Crunch Time" style="max-width: 400px; margin-bottom: 1rem;">
+
+                <p>Crunch Time by Hellish Studios is a First Year Project developed in 8 weeks using Unreal Engine.</p>
+
+                <div class="gallery">
+                    <div class="gallery-display">
+                        <img class="gallery-item active" data-index="0" src="media/crunch-time/Itch_Banner.gif" alt="Crunch Time Banner">
+                        <img class="gallery-item" data-index="1" src="media/crunch-time/bS7p2.png" alt="Screenshot">
+                        <img class="gallery-item" data-index="2" src="media/crunch-time/n2sR1K.png" alt="Screenshot">
+                        <img class="gallery-item" data-index="3" src="media/crunch-time/Xby2n.png" alt="Screenshot">
+                        <img class="gallery-item" data-index="4" src="media/crunch-time/YpL13x.png" alt="Screenshot">
+                        <img class="gallery-item" data-index="5" src="media/crunch-time/YQk4x.png" alt="Screenshot">
+                    </div>
+
+                    <div class="gallery-thumbs">
+                        <div class="thumb active" data-index="0">
+                            <img src="media/crunch-time/Itch_Banner.gif" alt="">
+                        </div>
+                        <div class="thumb" data-index="1">
+                            <img src="media/crunch-time/bS7p2.png" alt="">
+                        </div>
+                        <div class="thumb" data-index="2">
+                            <img src="media/crunch-time/n2sR1K.png" alt="">
+                        </div>
+                        <div class="thumb" data-index="3">
+                            <img src="media/crunch-time/Xby2n.png" alt="">
+                        </div>
+                        <div class="thumb" data-index="4">
+                            <img src="media/crunch-time/YpL13x.png" alt="">
+                        </div>
+                        <div class="thumb" data-index="5">
+                            <img src="media/crunch-time/YQk4x.png" alt="">
+                        </div>
+                    </div>
+                </div>
+
+                <a href="https://hellishstudios.itch.io/crunch-time" class="external-link" target="_blank" rel="noopener">
+                    Play on itch.io →
+                </a>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Contact</h2>
+            <p>Email: <a href="mailto:keamu.hill@hotmail.com">keamu.hill@hotmail.com</a></p>
+            <p>LinkedIn: <a href="https://www.linkedin.com/in/keamu-hill" target="_blank" rel="noopener">linkedin.com/in/keamu-hill</a></p>
+            <p>GitHub: <a href="https://github.com/keamuhill" target="_blank" rel="noopener">github.com/keamuhill</a></p>
+        </section>
+
+        <footer>
+            <p>© 2025 Keamu Hill</p>
+        </footer>
+    </div>
+
+    <script src="boids.js"></script>
+    <script src="gallery.js"></script>
+
+</body>
+</html>
