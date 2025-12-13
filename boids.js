@@ -18,11 +18,10 @@ document.addEventListener('mouseleave', () => {
 });
 
 document.addEventListener('touchmove', (e) => {
-    e.preventDefault();
     const touch = e.touches[0];
     mouse.x = touch.clientX;
     mouse.y = touch.clientY;
-}, { passive: false });
+});
 
 document.addEventListener('touchstart', (e) => {
     const touch = e.touches[0];
