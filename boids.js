@@ -17,22 +17,24 @@ document.addEventListener('mouseleave', () => {
     mouse.y = -1000;
 });
 
-document.addEventListener('touchmove', (e) => {
-    const touch = e.touches[0];
-    mouse.x = touch.clientX;
-    mouse.y = touch.clientY;
-});
+if (window.innerWidth > 768) {
+    document.addEventListener('touchmove', (e) => {
+        const touch = e.touches[0];
+        mouse.x = touch.clientX;
+        mouse.y = touch.clientY;
+    });
 
-document.addEventListener('touchstart', (e) => {
-    const touch = e.touches[0];
-    mouse.x = touch.clientX;
-    mouse.y = touch.clientY;
-});
+    document.addEventListener('touchstart', (e) => {
+        const touch = e.touches[0];
+        mouse.x = touch.clientX;
+        mouse.y = touch.clientY;
+    });
 
-document.addEventListener('touchend', () => {
-    mouse.x = -1000;
-    mouse.y = -1000;
-});
+    document.addEventListener('touchend', () => {
+        mouse.x = -1000;
+        mouse.y = -1000;
+    });
+}
 
 
 function resizeCanvas() 
