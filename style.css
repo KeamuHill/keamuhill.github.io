@@ -124,7 +124,7 @@ nav a:hover {
 }
 
 section {
-    max-width: 1000px;
+    max-width: 1200px;
     margin: 4rem auto;
     padding: 3rem;
     background: rgba(15, 15, 30, 0.5);
@@ -278,7 +278,7 @@ p {
 
 .demo-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(800px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(1000px, 1fr));
     gap: 2rem;
     margin: 1.5rem 0;
 }
@@ -344,8 +344,36 @@ a:hover {
     }
 
     section {
-        margin: 2rem 1rem;
-        padding: 2rem 1.5rem;
+        margin: 1rem 0.5rem;
+        padding: 1.5rem 1rem;
+        border-width: 0.5px;
+    }
+
+    .project {
+        padding: 1rem;
+        border-left-width: 1px;
+    }
+
+    .gallery-display {
+        border-width: 0.5px;
+    }
+
+    .demo-item {
+        border-width: 0.5px;
+    }
+
+    .demo-item img,
+    .demo-item video {
+        border-width: 0.5px;
+    }
+
+    .single-image img {
+        border-width: 0.5px;
+    }
+
+    .project img {
+        max-width: 100%;
+        height: auto;
     }
 
     nav a {

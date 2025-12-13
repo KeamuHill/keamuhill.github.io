@@ -8,11 +8,29 @@ const mouse = {
 };
 
 document.addEventListener('mousemove', (e) => {
-    mouse.x = e.clientX; 
-    mouse.y = e.clientY;  
+    mouse.x = e.clientX;
+    mouse.y = e.clientY;
 });
 
 document.addEventListener('mouseleave', () => {
+    mouse.x = -1000;
+    mouse.y = -1000;
+});
+
+document.addEventListener('touchmove', (e) => {
+    e.preventDefault();
+    const touch = e.touches[0];
+    mouse.x = touch.clientX;
+    mouse.y = touch.clientY;
+}, { passive: false });
+
+document.addEventListener('touchstart', (e) => {
+    const touch = e.touches[0];
+    mouse.x = touch.clientX;
+    mouse.y = touch.clientY;
+});
+
+document.addEventListener('touchend', () => {
     mouse.x = -1000;
     mouse.y = -1000;
 });

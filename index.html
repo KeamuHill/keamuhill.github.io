@@ -45,22 +45,64 @@
             <h2>Projects</h2>
             
             <div class="project">
-                <h3>Custom 3D Game Engine & Tumult</h3>
-                
-                <p>A 3D engine built from scratch with C++, featuring Flecs ECS, Jolt Physics, and OpenGL. Currently developing Tumult, a local-multiplayer arena-combat game utilising the engine's advanced systems.</p>
-                
+                <h3>Cauda Engine</h3>
+
+                <p>A custom 3D game engine developed in 4.5 months, built from the ground up with C++ and modern low-level libraries. Features a powerful deferred rendering pipeline with advanced graphics techniques and robust physics simulation.</p>
+
+                <div class="gallery">
+                    <div class="gallery-display">
+                        <img class="gallery-item active" data-index="0" src="media/tumult/cauda_screenshot.png" alt="Cauda Engine">
+                        <img class="gallery-item" data-index="1" src="media/tumult/Clouds.gif" alt="Volumetric Cloud Rendering">
+                        <img class="gallery-item" data-index="2" src="media/tumult/Scene.gif" alt="Engine Scene">
+                    </div>
+
+                    <div class="gallery-thumbs">
+                        <div class="thumb active" data-index="0">
+                            <img src="media/tumult/cauda_screenshot.png" alt="">
+                        </div>
+                        <div class="thumb" data-index="1">
+                            <img src="media/tumult/Clouds.gif" alt="">
+                        </div>
+                        <div class="thumb" data-index="2">
+                            <img src="media/tumult/Scene.gif" alt="">
+                        </div>
+                    </div>
+                </div>
+
+                <ul class="tech-list">
+                    <li>Flecs ECS architecture</li>
+                    <li>Jolt Physics integration</li>
+                    <li>ImGui editor interface</li>
+                    <li>Ozz Animation for skeletal animation</li>
+                    <li>Robust level-editor with Prefab support and an extensive list of ECS components</li>
+                    <li>Custom OpenGL deferred renderer with PBR materials and lighting</li>
+                    <li>Ray-marched point and spot light shadows</li>
+                    <li>Instanced Shell texturing for added surface detail</li>
+                    <li>Indirect instancing with multithreaded batch collection</li>
+                    <li>SSAO and dual Kawase bloom</li>
+                    <li>Pixel-perfect render snapping with lighting-aware single-pixel edge highlights and outlines</li>
+                    <li>Shader interaction volumes and stencil occlusion highlighting</li>
+                    <li>Exponential height fog</li>
+                    <li>Volumetric cloud rendering using custom Perlin-Worley noise with SDF primitives and fixed-step raymarching</li>
+                    <li>Catmull-Rom procedural rope rendering</li>
+                </ul>
+            </div>
+
+            <div class="project">
+                <h3>Tumult</h3>
+
+                <p>A fast-paced local-multiplayer arena-combat game built using Cauda Engine. Players engage in chaotic battles across dynamic arenas, utilizing the engine's advanced rendering and physics systems for smooth, responsive gameplay.</p>
+
                 <div class="gallery">
 
                     <div class="gallery-display">
-                        <img class="gallery-item" data-index="1" src="media/tumult/Scene.gif" alt="Tumult Scene">
                         <img class="gallery-item active" data-index="0" src="media/tumult/Gameplay.gif" alt="Gameplay">
-                        <img class="gallery-item" data-index="2" src="media/tumult/BulletHell.gif" alt="Bullet Hell">
-                        <img class="gallery-item" data-index="3" src="media/tumult/Clouds.gif" alt="Cloud Rendering">
-                        <img class="gallery-item" data-index="4" src="media/tumult/Towers.gif" alt="Tower Defense">
-                        <img class="gallery-item" data-index="5" src="media/tumult/Capture.PNG" alt="Screenshot">
-                        <img class="gallery-item" data-index="6" src="media/tumult/Capture1.PNG" alt="Screenshot">
-                        <img class="gallery-item" data-index="7" src="media/tumult/Capture2.PNG" alt="Screenshot">
-                        <img class="gallery-item" data-index="8" src="media/tumult/Capture4.PNG" alt="Screenshot">
+                        <img class="gallery-item" data-index="1" src="media/tumult/BulletHell.gif" alt="Bullet Hell">
+                        <img class="gallery-item" data-index="2" src="media/tumult/Towers.gif" alt="Tower Defense">
+                        <img class="gallery-item" data-index="3" src="media/tumult/Capture.PNG" alt="Screenshot">
+                        <img class="gallery-item" data-index="4" src="media/tumult/Capture1.PNG" alt="Screenshot">
+                        <img class="gallery-item" data-index="5" src="media/tumult/Capture2.PNG" alt="Screenshot">
+                        <img class="gallery-item" data-index="6" src="media/tumult/Capture4.PNG" alt="Screenshot">
                     </div>
 
                     <div class="gallery-thumbs">
@@ -68,37 +110,31 @@
                             <img src="media/tumult/Gameplay.gif" alt="">
                         </div>
                         <div class="thumb" data-index="1">
-                            <img src="media/tumult/Scene.gif" alt="">
-                        </div>
-                        <div class="thumb" data-index="2">
                             <img src="media/tumult/BulletHell.gif" alt="">
                         </div>
-                        <div class="thumb" data-index="3">
-                            <img src="media/tumult/Clouds.gif" alt="">
-                        </div>
-                        <div class="thumb" data-index="4">
+                        <div class="thumb" data-index="2">
                             <img src="media/tumult/Towers.gif" alt="">
                         </div>
-                        <div class="thumb" data-index="5">
+                        <div class="thumb" data-index="3">
                             <img src="media/tumult/Capture.PNG" alt="">
                         </div>
-                        <div class="thumb" data-index="6">
+                        <div class="thumb" data-index="4">
                             <img src="media/tumult/Capture1.PNG" alt="">
                         </div>
-                        <div class="thumb" data-index="7">
+                        <div class="thumb" data-index="5">
                             <img src="media/tumult/Capture2.PNG" alt="">
                         </div>
-                        <div class="thumb" data-index="8">
+                        <div class="thumb" data-index="6">
                             <img src="media/tumult/Capture4.PNG" alt="">
                         </div>
                     </div>
                 </div>
 
                 <ul class="tech-list">
-                    <li>Deferred shading pipeline with PBR materials</li>
-                    <li>Skeletal animation with Ozz Animation</li>
-                    <li>Jolt Physics integration with custom rope physics</li>
-                    <li>Pixel-perfect orthographic rendering</li>
+                    <li>Local multiplayer arena combat</li>
+                    <li>Dynamic game modes and arenas</li>
+                    <li>Advanced character animation and physics</li>
+                    <li>Custom rope physics for grappling mechanics</li>
                 </ul>
             </div>
 
@@ -125,6 +161,7 @@
                 <ul class="tech-list">
                     <li>GPU-accelerated raymarching</li>
                     <li>Efficient brickmap based storage</li>
+                    <li>Advanced 3D cellular-automata simulation with physics integration</li>
                     <li>Dynamic lighting, reflections, ambient-occlusion, and shadows</li>
                 </ul>
             </div>
@@ -139,7 +176,7 @@
                         <video controls loop muted>
                             <source src="media/2d-physics/Asterboids-2025-1.mp4" type="video/mp4">
                         </video>
-                        <p>Custom 2D rigid body physics with collision detection and resolution.</p>
+                        <p>Custom 2D rigid body physics simulation with collision detection and resolution.</p>
                     </div>
 
                     <div class="demo-item">
